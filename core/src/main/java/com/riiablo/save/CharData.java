@@ -273,6 +273,8 @@ public class CharData implements ItemData.UpdateListener, Pool.Poolable {
     base.put(Stat.maxlightresist, 75);
     base.put(Stat.maxcoldresist, 75);
     base.put(Stat.maxpoisonresist, 75);
+
+    statData.aggregate().addAll(base);
   }
 
   public void preloadItems() {
