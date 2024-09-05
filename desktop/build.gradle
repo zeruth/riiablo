@@ -19,6 +19,9 @@ dependencies {
 
 application {
   mainClass = 'com.riiablo.DesktopLauncher'
+  applicationDefaultJvmArgs = [
+      '--add-opens', 'java.prefs/java.util.prefs=ALL-UNNAMED'
+  ]
 }
 
 run {
@@ -29,6 +32,10 @@ run {
   if (OperatingSystem.current() == OperatingSystem.MAC_OS) {
     jvmArgs += "-XstartOnFirstThread"
   }
+}
+
+distTar {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 jar {
@@ -44,6 +51,7 @@ jar {
   exclude('data/*.ods') // source files for excel tables
   exclude('lang/*.txt') // source files for i18n tables
   exclude('test/**') // test resources
+  exclude('lib/core-0.0.5-SNAPSHOT.jar')
   dependsOn configurations.runtimeClasspath
   from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
   manifest {

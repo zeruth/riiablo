@@ -2,7 +2,6 @@ rootProject.name = 'riiablo'
 
 include 'core'
 include 'desktop'
-include 'android'
 
 include 'excel:core'
 include 'excel:annotations'
