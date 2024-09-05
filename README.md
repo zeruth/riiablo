@@ -1,4 +1,14 @@
-# Riiablo
+# Riiablo  
+
+Changes in my fork:  
+- Use Gradle 8.5
+- Use Java 21
+- Remove Android subproject until Compose framework is in order
+
+Coming changes in my fork:
+- Use Compose for multiplatform support
+- Use Gradle KTS build scripts
+- Use [Meteors](https://www.github.com/zeruth/Meteor) injector for bytecode weaving
 
 [Join us on Discord!](https://discord.gg/qRbWYNM)
 
