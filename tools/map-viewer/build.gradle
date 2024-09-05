@@ -1,3 +1,14 @@
-dependencies { implementation project(':tools:backends:backend-lwjgl') }
+dependencies {
+  implementation project(':tools:backends:backend-lwjgl')
+  implementation project(':tools:backends:backend-core')
+  implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+  implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+  implementation "com.kotcrab.vis:vis-ui:$visuiVersion"
+}
 description = 'View and generate maps.'
-application.mainClass = 'com.riiablo.map.MapViewer'
+application {
+  mainClass = 'com.riiablo.map.MapViewer'
+  applicationDefaultJvmArgs = [
+      '--add-opens', 'java.prefs/java.util.prefs=ALL-UNNAMED'
+  ]
+}
